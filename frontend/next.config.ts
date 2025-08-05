@@ -1,5 +1,5 @@
-import type { NextConfig } from 'next'
-import path from 'path'
+import type { NextConfig } from "next";
+import path from "path";
 
 const nextConfig: NextConfig = {
   // Webpack configuration for proper alias resolution
@@ -7,10 +7,10 @@ const nextConfig: NextConfig = {
     // Add alias for @ symbol
     config.resolve.alias = {
       ...config.resolve.alias,
-      '@': path.resolve(__dirname, 'src'),
-    }
-    
-    return config
+      "@": path.resolve(__dirname, "src"),
+    };
+
+    return config;
   },
   // Ensure proper module resolution
   experimental: {
@@ -22,6 +22,6 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: false,
   },
-}
+};
 
-export default nextConfig
+export default nextConfig;

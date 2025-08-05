@@ -1,8 +1,12 @@
 import os
+from dotenv import load_dotenv
+
+# Load environment variables FIRST before any other imports
+load_dotenv()
+
 from fastapi import FastAPI, Depends, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from dotenv import load_dotenv
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
@@ -12,9 +16,6 @@ from clerk_auth import get_current_user_optional
 from typing import Optional
 
 # --- ENVIRONMENT AND APP SETUP ---
-
-# Load environment variables from .env file
-load_dotenv()
 
 # Initialize FastAPI app
 app = FastAPI(
