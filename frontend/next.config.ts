@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   experimental: {
     esmExternals: true,
   },
-  transpilePackages: ['lucide-react'],
+  transpilePackages: ["lucide-react"],
 };
 
 export default nextConfig;
