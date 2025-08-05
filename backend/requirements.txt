@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+python-dotenv
+langchain
+langchain-google-genai
+azure-storage-blob
+python-pptx
+pytesseract
+langchain-astradb
+pyjwt
+cryptography
+requests
+langchain-community
+pillow
+PyJWT
