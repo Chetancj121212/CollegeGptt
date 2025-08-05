@@ -30,6 +30,7 @@ A modern, responsive Next.js frontend for the CollegeGPT application. Built with
 ## 🚀 Quick Start
 
 ### 1. Install Dependencies
+
 ```bash
 npm install
 # or
@@ -37,6 +38,7 @@ yarn install
 ```
 
 ### 2. Environment Setup
+
 Create a `.env.local` file in the frontend directory:
 
 ```env
@@ -53,6 +55,7 @@ NEXT_PUBLIC_API_URL=http://localhost:8000
 ```
 
 ### 3. Run Development Server
+
 ```bash
 npm run dev
 # or
@@ -89,6 +92,7 @@ frontend/
 ## 🎨 UI Components
 
 ### Available Components
+
 - **Avatar**: User profile pictures
 - **Badge**: Status indicators
 - **Button**: Interactive buttons with variants
@@ -98,9 +102,10 @@ frontend/
 - **Separator**: Visual dividers
 
 ### Component Usage
+
 ```tsx
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export function ExampleComponent() {
   return (
@@ -112,7 +117,7 @@ export function ExampleComponent() {
         <Button variant="default">Click me</Button>
       </CardContent>
     </Card>
-  )
+  );
 }
 ```
 
@@ -126,6 +131,7 @@ The application uses Clerk for authentication with the following features:
 - **Session Management**: Secure session handling
 
 ### Authentication Flow
+
 1. Users access the application
 2. Unauthenticated users are redirected to sign-in
 3. After authentication, users can access the chat interface
@@ -134,16 +140,19 @@ The application uses Clerk for authentication with the following features:
 ## 📱 Pages and Features
 
 ### Home Page (`/`)
+
 - Landing page with application overview
 - Navigation to chat interface
 - User authentication status
 
 ### Chat Interface (`/chat`)
+
 - Real-time messaging interface
 - Message history
 - User-friendly chat bubbles
 - Responsive design
 
 ### Authentication Pages
+
 - **Sign In** (`/sign-in`): User login
 - **Sign Up** (`/sign-up`): User registration

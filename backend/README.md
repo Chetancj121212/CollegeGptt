@@ -20,6 +20,7 @@ This is the FastAPI backend for the CollegeGPT application, providing a RAG (Ret
 ## 🚀 Quick Start
 
 ### 1. Setup Virtual Environment
+
 ```bash
 python -m venv venv
 
@@ -31,11 +32,13 @@ source venv/bin/activate
 ```
 
 ### 2. Install Dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
 
 ### 3. Environment Configuration
+
 Create a `.env` file:
 
 ```env
@@ -59,6 +62,7 @@ AZURE_CONTAINER_NAME=your_container_name
 ```
 
 ### 4. Run the Server
+
 ```bash
 # Development mode
 uvicorn main:app --reload --host 127.0.0.1 --port 8000
@@ -70,10 +74,12 @@ uvicorn main:app --host 0.0.0.0 --port 8000
 ## 📚 API Endpoints
 
 ### Health Check
+
 - `GET /` - Basic health check
 - `GET /health` - Detailed health status
 
 ### Chat
+
 - `POST /chat` - Send message and get AI response
   ```json
   {
@@ -83,6 +89,7 @@ uvicorn main:app --host 0.0.0.0 --port 8000
   ```
 
 ### Document Ingestion
+
 - `POST /ingest` - Upload and process documents
   - Supports: PDF, PowerPoint, Images
   - Automatically extracts text and creates embeddings
@@ -90,9 +97,11 @@ uvicorn main:app --host 0.0.0.0 --port 8000
 ## 🔒 Authentication
 
 ### Development Mode
+
 Set `ENVIRONMENT=development` to run without authentication requirements. The system will use mock users for testing.
 
 ### Production Mode
+
 - Requires `CLERK_SECRET_KEY` environment variable
 - All endpoints require valid JWT tokens
 - Tokens are verified against Clerk's JWKS
@@ -100,6 +109,7 @@ Set `ENVIRONMENT=development` to run without authentication requirements. The sy
 ## 🛠️ Development
 
 ### Project Structure
+
 ```
 backend/
 ├── main.py              # FastAPI application
@@ -112,17 +122,20 @@ backend/
 ### Key Components
 
 #### `main.py`
+
 - FastAPI application setup
 - Chat endpoint implementation
 - Vector store integration
 - CORS configuration
 
 #### `clerk_auth.py`
+
 - JWT token verification
 - Development/production mode handling
 - User authentication dependencies
 
 #### `ingest.py`
+
 - Document processing pipeline
 - Text extraction from various formats
 - Vector embedding generation
@@ -136,9 +149,11 @@ backend/
 ## 🧪 Testing
 
 ### Manual Testing
+
 Visit `http://localhost:8000/docs` for interactive API documentation.
 
 ### Development Mode Testing
+
 ```bash
 # Set development mode
 export ENVIRONMENT=development  # Linux/macOS
@@ -150,6 +165,7 @@ uvicorn main:app --reload
 ## 📦 Dependencies
 
 ### Core Dependencies
+
 - `fastapi`: Web framework
 - `uvicorn`: ASGI server
 - `langchain`: LLM framework
@@ -157,11 +173,13 @@ uvicorn main:app --reload
 - `langchain-astradb`: Vector database
 
 ### Authentication
+
 - `pyjwt`: JWT token handling
 - `cryptography`: JWT verification
 - `requests`: HTTP client
 
 ### Document Processing
+
 - `python-pptx`: PowerPoint processing
 - `pytesseract`: OCR for images
 - `pillow`: Image processing
@@ -169,6 +187,7 @@ uvicorn main:app --reload
 ## 🚀 Deployment
 
 ### Environment Variables for Production
+
 ```env
 ENVIRONMENT=production
 GOOGLE_API_KEY=your_production_key
@@ -178,6 +197,7 @@ CLERK_SECRET_KEY=your_production_clerk_key
 ```
 
 ### Docker (Optional)
+
 ```dockerfile
 FROM python:3.11-slim
 
@@ -194,10 +214,12 @@ CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
 ## 🔧 Configuration Options
 
 ### Vector Store Settings
+
 - Collection name can be customized via `ASTRA_DB_COLLECTION_NAME`
 - Embedding model: `models/embedding-001` (Google)
 
 ### AI Model Settings
+
 - Chat model: `gemini-1.5-flash` (Google)
 - Temperature: 0.3 (configurable in code)
 
@@ -206,10 +228,12 @@ CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
 ### Common Issues
 
 1. **"CLERK_SECRET_KEY required"**
+
    - Set `ENVIRONMENT=development` for local development
    - Or add your Clerk secret key to `.env`
 
 2. **"Vector store connection failed"**
+
    - Verify AstraDB credentials
    - Check network connectivity
 
@@ -218,7 +242,9 @@ CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
    - Check API quotas and billing
 
 ### Debug Mode
+
 Set FastAPI debug mode:
+
 ```python
 app = FastAPI(debug=True)
 ```

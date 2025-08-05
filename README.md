@@ -14,6 +14,7 @@ A full-stack RAG (Retrieval-Augmented Generation) chatbot application designed f
 ## 🏗️ Architecture
 
 ### Backend (FastAPI)
+
 - **FastAPI**: High-performance Python web framework
 - **LangChain**: Framework for building AI applications
 - **AstraDB**: Vector database for document embeddings
@@ -21,6 +22,7 @@ A full-stack RAG (Retrieval-Augmented Generation) chatbot application designed f
 - **Clerk Authentication**: JWT-based user authentication
 
 ### Frontend (Next.js)
+
 - **Next.js 15**: React framework with App Router
 - **TypeScript**: Type-safe development
 - **Tailwind CSS**: Utility-first CSS framework
@@ -39,6 +41,7 @@ A full-stack RAG (Retrieval-Augmented Generation) chatbot application designed f
 ## 🛠️ Installation
 
 ### 1. Clone the Repository
+
 ```bash
 git clone https://github.com/yourusername/CollegeGptt.git
 cd CollegeGptt
@@ -67,6 +70,7 @@ npm install
 ## ⚙️ Configuration
 
 ### Backend Environment Variables
+
 Create a `.env` file in the `backend` directory:
 
 ```env
@@ -90,6 +94,7 @@ AZURE_CONTAINER_NAME=your_container_name
 ```
 
 ### Frontend Environment Variables
+
 Create a `.env.local` file in the `frontend` directory:
 
 ```env
@@ -104,6 +109,7 @@ NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
 ### Development Mode
 
 1. **Start the Backend**:
+
 ```bash
 cd backend
 # Activate virtual environment first
@@ -111,12 +117,14 @@ uvicorn main:app --reload --host 127.0.0.1 --port 8000
 ```
 
 2. **Start the Frontend**:
+
 ```bash
 cd frontend
 npm run dev
 ```
 
 The application will be available at:
+
 - Frontend: http://localhost:3000
 - Backend API: http://localhost:8000
 - API Documentation: http://localhost:8000/docs
@@ -128,13 +136,16 @@ Set `ENVIRONMENT=production` in your backend `.env` file and ensure all required
 ## 📚 API Endpoints
 
 ### Chat
+
 - `POST /chat` - Send a message and get AI response
 
 ### Document Management
+
 - `POST /ingest` - Upload and process documents
 - `GET /health` - Health check endpoint
 
 ### Authentication
+
 - Uses Clerk JWT tokens for secure API access
 - Development mode allows testing without authentication
 
